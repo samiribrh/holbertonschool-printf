@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 			crntchar = '%';
 			write(1, &crntchar, 1), i += 2, len++;
 		}
+		else if (ispercent && format[i + 1] == '\0')
+			continue;
 		else if (isescape && format[i + 1] == 'n')
 		{
 			crntchar = '\n';
