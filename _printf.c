@@ -19,6 +19,13 @@ int _printf(const char *format, ...)
 			crntchar = (char)va_arg(arg, int);
 			write(1, &crntchar, 1), i += 2, len++;
 		}
+		else if (ispercent && format[i + 1] == 's')
+		{
+			crntstring = va_arg(arg, char*);
+			for (lenstr = 0; crntstring[lenstr]; lenstr++)
+				;
+			write(1, crntstring, lenstr), i += 2, len += lenstr
+		}
 		else if (ispercent && format[i + 1] == '%')
 		{
 			crntchar = '%';
