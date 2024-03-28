@@ -8,7 +8,23 @@
  * @format: Main format.
  *
  * Return: Number of the chars printed.
-*/
+ */
+void write_str(int *len, char *str)
+{
+	int lenstr;
+	
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		*len += 6;
+	}
+	else
+	{
+		for (lenstr = 0; str[lenstr]; lenstr++);
+		write(1, str, lenstr);
+		*len += lenstr;
+	}
+}
 int _printf(const char *format, ...)
 {
 	va_list arg;
