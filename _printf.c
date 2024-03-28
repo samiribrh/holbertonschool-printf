@@ -22,9 +22,14 @@ int _printf(const char *format, ...)
 		else if (ispercent && format[i + 1] == 's')
 		{
 			crntstring = va_arg(arg, char*);
-			for (lenstr = 0; crntstring[lenstr]; lenstr++)
-				;
-			write(1, crntstring, lenstr), i += 2, len += lenstr
+			if (crntstring == NULL)
+				write(1, "(null)", 6), i += 2, len += 6;
+			else
+			{
+				for (lenstr = 0; crntstring[lenstr]; lenstr++)
+					;
+				write(1, crntstring, lenstr), i += 2, len += lenstr;
+			}
 		}
 		else if (ispercent && format[i + 1] == '%')
 		{
