@@ -25,7 +25,8 @@ void write_char(int *len, char c)
  */
 void write_str(int *len, char *str)
 {
-	int lenstr;	
+	int lenstr;
+
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
@@ -33,7 +34,8 @@ void write_str(int *len, char *str)
 	}
 	else
 	{
-		for (lenstr = 0; str[lenstr]; lenstr++);
+		for (lenstr = 0; str[lenstr]; lenstr++)
+			;
 		write(1, str, lenstr);
 		*len += lenstr;
 	}
@@ -77,6 +79,6 @@ int _printf(const char *format, ...)
 		else
 			write_char(&len, format[i]), i++;
 	}
-    va_end(arg);
-    return len;
+	va_end(arg);
+	return (len);
 }
