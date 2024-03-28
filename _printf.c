@@ -3,6 +3,12 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+/**
+ * _printf - Prints the given format with variables.
+ * @format: Main format.
+ *
+ * Return: Number of the chars printed.
+*/
 int _printf(const char *format, ...)
 {
 	va_list arg;
