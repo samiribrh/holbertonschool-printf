@@ -99,7 +99,7 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 				case 'i':
-					write_integer(&len, va_arg(arg, int));
+					write_int(&len, va_arg(arg, int));
 					i += 2;
 					break;
 				case '%':
