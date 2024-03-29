@@ -97,6 +97,11 @@ int _printf(const char *format, ...)
 					crntstring = va_arg(arg, char*);
 					write_str(&len, crntstring), i += 2;
 					break;
+				case 'd':
+				case 'i':
+					write_integer(&len, va_arg(arg, int));
+					i += 2;
+					break;
 				case '%':
 					write_char(&len, '%'), i += 2;
 					break;
