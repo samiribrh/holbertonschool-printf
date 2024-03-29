@@ -105,8 +105,7 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 				case 'i':
-					write_int(&len, va_arg(arg, int));
-					i += 2;
+					write_int(&len, va_arg(arg, int)), i += 2;
 					break;
 				case '%':
 					write_char(&len, '%'), i += 2;
