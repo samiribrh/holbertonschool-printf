@@ -42,6 +42,36 @@ void write_str(int *len, char *str)
 }
 
 /**
+ * write_int - Writes the given integer.
+ * @len: Length of the chars in _printf func.
+ * @num: Integer to be printed
+ *
+ * Return: void.
+ */
+void write_int(int *len, int num)
+{
+	int divisor = 1, temp = num;
+	char digit;
+
+	if (num < 0)
+	{
+		write_char(len, '-');
+		temp = -num;
+	}
+
+	while (temp / divisor >= 10)
+		divisor *= 10;
+
+	while (divisor != 0)
+	{
+		digit = '0' + temp / divisor;
+		write_char(len, digit);
+		temp %= divisor;
+		divisor /= 10;
+	}
+}
+
+/**
  * _printf - Prints the given format with variables.
  * @format: Main format
  *
