@@ -50,7 +50,7 @@ void write_int(int *len, int num)
 {
 	int divisor = 1, temp = num;
 	char digit;
-	
+
 	if (num == INT_MIN)
 	{
 		write_str(len, "-2147483648");
