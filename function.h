@@ -1,4 +1,4 @@
-#ifndef FUNCTION_H__
+#ifndef FUNCTION_H_
 #define FUNCTION_H_
 
 /**
