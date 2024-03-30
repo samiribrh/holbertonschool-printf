@@ -1,5 +1,4 @@
-#ifndef FUNCTION_H_
-#define FUNCTION_H_
+#include "main.h"
 
 /**
  * write_char - Writes the given char.
@@ -73,5 +72,3 @@ void write_int(int *len, int num)
 		divisor /= 10;
 	}
 }
-
-#endif

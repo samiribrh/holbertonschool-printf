@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include "function.h"
+#include "function.c"
 #include "main.h"
 
 /**
