@@ -1,4 +1,3 @@
-#include "function.c"
 #include "main.h"
 
 /**

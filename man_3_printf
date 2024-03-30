@@ -1,36 +1,43 @@
-#!/bin/bash
-
-cat << EOF
-.\" Manpage for _printf
-.\"
-.TH man 1 "30 Mar 2024" "1.0" "Printf Manual"
-.SH NAME
-_printf \- Print formatted output
-.SH SYNOPSIS
-.B _printf
-[\fIformat\fR]
-.SH DESCRIPTION
-This manual page documents the usage of the \fI_printf\fR function, which is used to print formatted output similar to the standard C library function printf().
-.PP
-The \fI_printf\fR function takes a format string as input, which can contain conversion specifiers such as %c, %s, %d, %i, and %%.
-.SH OPTIONS
-.TP
-\fBformat\fR
-The format string containing conversion specifiers and optional arguments.
-.SH RETURN VALUE
-The function returns the number of characters printed.
-.SH EXAMPLES
-Print a string:
-.nf
-.B _printf "Hello, world!\n"
-.fi
-Print a formatted integer:
-.nf
-.B _printf "The answer is %d\n" 42
-.fi
-.SH SEE ALSO
-.BR printf (3)
-.SH AUTHOR
-This manual page was written by Kamal and Samir KamalAbdullayev0 and samiribrh
-EOF
-
+#!/bin/sh
+echo ".\" Manpage for printf
+.TH PRINTF 0 \"30 Mar 2024\" \"0.1\" \"DIY User commands\"
+.SH NAME:
+printf \- prints formatted string (function we\'ve creating for a week)
+.SH SYNOPSIS:
+.B int
+.B _printf(const char *format, ...);
+.SH DESCRIPTION:
+The _printf() function formats and prints data to stdout stream.
+.br
+The FORMAT string specifies the format of the output.
+.br
+It consists of zero or more conversion specifications, each of which is preceded by a percent sign (%).
+.PP FLAGS:
+c: Character;
+.br
+s: String;
+.br
+%: Percent sign (if \"%%\")
+.br
+i: Signed decimal integer;
+.br
+d: Signed decimal integer;
+.br
+.SH RETURN VALUE:
+The _printf() function returns the number of characters printed to the stdout
+.SH EXAMPLE:
+.B printf(\"Hello, World!\");
+.br
+This code will print the following output to the stdout stream:
+.br
+**Hello, World!**
+.SH AUTHOR:
+samiribrh -Samir Ibrahimov.
+.br
+KamalAbdullayev0 - Kamal Abdullayev.
+.br
+.SH SEE ALSO:
+official printf function: man (1) printf" > _printf.1
+mv _printf.1 /usr/local/man/man1/
+gzip -f /usr/local/man/man1/_printf.1
+man _printf
