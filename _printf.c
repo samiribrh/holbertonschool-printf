@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
-#include <function.h>
-#include <main.h>
+#include "function.h"
+#include "main.h"
 
 /**
  * _printf - Prints the given format with variables.
